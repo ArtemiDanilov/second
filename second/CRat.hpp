@@ -1,9 +1,3 @@
-//
-//  CRat.h
-//  second
-//
-//  Created by Артемий Данилов on 08.11.2021.
-//
 #pragma once
 #include <iostream>
 #include <math.h>

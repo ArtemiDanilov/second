@@ -1,10 +1,3 @@
-//
-//  autotest.cpp
-//  second
-//
-//  Created by Артемий Данилов on 08.11.2021.
-//
-
 #include <stdio.h>
 #include "Header.hpp"
 

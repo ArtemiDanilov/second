@@ -1,10 +1,3 @@
-//
-//  CRat.cpp
-//  second
-//
-//  Created by Артемий Данилов on 04.11.2021.
-//
-
 #include "CRat.hpp"
 #include <math.h>
 
