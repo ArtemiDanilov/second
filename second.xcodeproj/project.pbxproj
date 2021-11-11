@@ -31,6 +31,7 @@
 		283A1B1B273443730044F34F /* CRat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CRat.cpp; sourceTree = "<group>"; };
 		2872C66A273A618D005E246E /* CRat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CRat.hpp; sourceTree = "<group>"; };
 		2872C66B273A6196005E246E /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
+		289FD32B273D86AA0024DF3E /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				28178A8E27390A24008F49E1 /* autotest.cpp */,
 				2872C66A273A618D005E246E /* CRat.hpp */,
 				2872C66B273A6196005E246E /* Header.hpp */,
+				289FD32B273D86AA0024DF3E /* CMakeLists.txt */,
 			);
 			path = second;
 			sourceTree = "<group>";
