@@ -5,21 +5,33 @@
         this->coord = new int*[2];
         lenght = 0;
     }
+    CRat :: CRat(CRat & cop){
+        lenght = cop.get_lenght();
+        coord = new int*[2];
+        coord[0] = new int [lenght];
+        coord[1] = new int [lenght];
+        for(int i = 0; i < lenght; i++){
+            coord[0][i] = cop.get_num(i);
+            coord[1][i] = cop.get_den(i);
+        }
+}
     CRat :: CRat(int lenght){
         this->coord = new int*[2];
         coord[0] = new int [lenght];
         coord[1] = new int [lenght];
         this->lenght = lenght;
     }
-    int CRat :: get_num(int n){
+     int CRat :: get_num(int n){
         
         return coord[0][n];
     }
     
-    int CRat :: get_den(int n){
+     int CRat :: get_den(int n){
         return coord[1][n];
     }
-    
+    int CRat :: get_lenght(){
+        return lenght;
+    }
     void CRat :: coordinates(int** arr, int lenght){
         coord[0] = new int [lenght];
         coord[1] = new int [lenght];
@@ -113,7 +125,7 @@
         return *this;
     }
     
-    float &CRat :: operator*(CRat &other){
+    CRat &CRat :: operator*(CRat &other){
         int numerator = 0, denominator = 1;
         float swe = 0, tpu = 0;
         for(int i = 0; i < lenght; i++){
@@ -125,8 +137,15 @@
         }
         swe = numerator;
         tpu = denominator;
-        swe /= tpu;
-        return swe;
+        int **arr = new int*[2];
+        arr[0] = new int[1];
+        arr[1] = new int[1];
+        CRat rez;
+        rez.coordinates(arr, 1);
+        delete [] arr[0];
+        delete [] arr[1];
+        delete [] arr;
+        return rez;
     }
     
     CRat &CRat :: operator=(CRat &other){

@@ -60,7 +60,9 @@ int main() {
     }
     if (a == 3) {
         cout << "Answer:" << endl;
-        cout << vectors[b] * vectors[k] << endl;
+        CRat res(n);
+        res = vectors[b] * vectors[k];
+        res.print();
     }
     
     return 0;

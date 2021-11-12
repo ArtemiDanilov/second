@@ -11,14 +11,16 @@ private:
 public:
     CRat();
     CRat(int lenght);
-    int get_num(int n);
+    CRat(CRat &);
+     int get_num(int n);
     int get_den(int n);
     void coordinates(int**, int);
     float lng();
     void print();
+     int get_lenght();
     CRat &operator+(CRat &other);
     CRat &operator-(CRat &other);
-    float &operator*(CRat &other);
+    CRat &operator*(CRat &other);
     CRat &operator=(CRat &other);
     bool &operator==(CRat &other); 
     ~CRat();
