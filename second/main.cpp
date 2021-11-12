@@ -5,7 +5,7 @@
 using namespace std;
 
 
-int main() {
+int main(){
     Autotest();
     int n = 0, a = 0, m = 0, b = 0, k = 0;
     cout << "Write lenght of vectors:" << endl;

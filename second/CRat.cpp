@@ -130,22 +130,16 @@
         float swe = 0, tpu = 0;
         for(int i = 0; i < lenght; i++){
             denominator *= this->coord[1][i] * other.get_den(i);
-            
         }
         for(int i = 0; i < lenght; i++){
             numerator += (this->coord[0][i] * other.get_num(i) * denominator) / (this->coord[1][i] * other.get_den(i));
         }
         swe = numerator;
         tpu = denominator;
-        int **arr = new int*[2];
-        arr[0] = new int[1];
-        arr[1] = new int[1];
-        CRat rez;
-        rez.coordinates(arr, 1);
-        delete [] arr[0];
-        delete [] arr[1];
-        delete [] arr;
-        return rez;
+        this->lenght = 1;
+        this->coord[0][0] = numerator;
+        this->coord[1][0] = denominator;
+        return *this;
     }
     
     CRat &CRat :: operator=(CRat &other){
