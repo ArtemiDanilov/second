@@ -27,11 +27,10 @@ int autotest_1(){
     CRat v_1;
     CRat v_2;
     CRat res;
-    CRat sum(m);
     v_1.coordinates(arr, m);
     v_2.coordinates(arr_2, m);
     res.coordinates(r, m);
-    sum = v_1 + v_2;
+    CRat sum = v_1 + v_2;
     if(sum == res){
         k = 1;
     }
@@ -79,11 +78,10 @@ int autotest_2(){
     CRat v_1;
     CRat v_2;
     CRat res;
-    CRat sum(m);
+    CRat sum = v_1 - v_2;
     v_1.coordinates(arr, m);
     v_2.coordinates(arr_2, m);
     res.coordinates(r, m);
-    sum = v_1 - v_2;
     if(sum == res){
         k = 1;
     }

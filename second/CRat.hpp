@@ -18,9 +18,9 @@ public:
     float lng();
     void print();
      int get_lenght();
-    CRat &operator+(CRat &other);
-    CRat &operator-(CRat &other);
-    CRat &operator*(CRat &other);
+    CRat operator+(CRat &other);
+    CRat operator-(CRat &other);
+    CRat operator*(CRat &other);
     CRat &operator=(CRat &other);
     bool &operator==(CRat &other); 
     ~CRat();

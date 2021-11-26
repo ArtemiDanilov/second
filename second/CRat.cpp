@@ -75,14 +75,17 @@
             if(coord[0][i] == 0 || coord[0][i] == coord[1][i] || coord[1][i] == 1){
                 if(coord[0][i] == 0){
                     cout << "0";
+                    cout << ",";
                     continue;
                 }
                 if(coord[0][i] == coord[1][i]){
                     cout << "1";
+                    cout << ",";
                     continue;
                 }
                 if (coord[1][i] == 1) {
                     cout << coord[0][i];
+                    cout << ",";
                     continue;
                 }
             }
@@ -95,37 +98,38 @@
         }
         cout << ")";
     }
-    CRat &CRat :: operator+(CRat &other){
+    CRat CRat :: operator+(CRat &other){
+        CRat a(lenght);
         for(int i = 0; i < lenght; i++){
-            int numerator = 0;
             if(this->coord[1][i] == other.get_den(i)){
-                this->coord[0][i] += other.get_num(i);
+                a.coord[0][i] = this->coord[0][i] + other.get_num(i);
+                a.coord[1][i] = other.get_den(i);
             }
             else{
-            numerator = this->coord[0][i] * other.get_den(i) + this->coord[1][i] * other.get_num(i);
-            this->coord[1][i] *= other.get_den(i);
-            this->coord[0][i] = numerator;
+            a.coord[0][i] = this->coord[0][i] * other.get_den(i) + this->coord[1][i] * other.get_num(i);
+            a.coord[1][i] = this->coord[1][i] * other.get_den(i);
             }
         }
-        return *this;
+        return a;
     }
     
-    CRat &CRat :: operator-(CRat &other){
+    CRat CRat :: operator-(CRat &other){
+        CRat a(lenght);
         for(int i = 0; i < lenght; i++){
-            int numerator = 0;
             if(this->coord[1][i] == other.get_den(i)){
-                this->coord[0][i] -= other.get_num(i);
+                a.coord[0][i] =this->coord[0][i] - other.get_num(i);
             }
             else{
-            numerator = this->coord[0][i] * other.get_den(i) - this->coord[1][i] * other.get_num(i);
-            this->coord[1][i] *= other.get_den(i);
-            this->coord[0][i] = numerator;
+            a.coord[0][i] = this->coord[0][i] * other.get_den(i) - this->coord[1][i] * other.get_num(i);
+            a.coord[1][i] = this->coord[1][i] * other.get_den(i);
+            
         }
         }
-        return *this;
+        return a;
     }
     
-    CRat &CRat :: operator*(CRat &other){
+    CRat CRat :: operator*(CRat &other){
+        CRat a(1);
         int numerator = 0, denominator = 1;
         float swe = 0, tpu = 0;
         for(int i = 0; i < lenght; i++){
@@ -134,12 +138,10 @@
         for(int i = 0; i < lenght; i++){
             numerator += (this->coord[0][i] * other.get_num(i) * denominator) / (this->coord[1][i] * other.get_den(i));
         }
-        swe = numerator;
-        tpu = denominator;
-        this->lenght = 1;
-        this->coord[0][0] = numerator;
-        this->coord[1][0] = denominator;
-        return *this;
+        a.coord[0][0] = numerator;
+        a.coord[1][0] = denominator;
+        
+        return a;
     }
     
     CRat &CRat :: operator=(CRat &other){

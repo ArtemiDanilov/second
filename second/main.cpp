@@ -38,32 +38,34 @@ int main(){
     delete [] coord[0];
     delete [] coord[1];
     delete [] coord;
-    cout << "What do you wanna do?" << endl << "1.Add two vectors" << endl << "2.Find the difference of two vectors" << endl << "3.Multiply two vectors" << endl;
+    a = 0;
+    while(a != 4){
+    cout << "What do you wanna do?" << endl << "1.Add two vectors" << endl << "2.Find the difference of two vectors" << endl << "3.Multiply two vectors" << endl << "4.Exit" << endl;
     cin >>  a;
+    if(a != 4){
     cout << "Write the numbers of vectors" << endl;
     cin >> b  >> k;
     b--;
     k--;
+    }
     if (a == 1) {
-        CRat res(n);
-        res = vectors[b] + vectors[k];
+       CRat res = vectors[b] + vectors[k];
         cout << "Answer:" << endl;
         res.print();
         cout << endl;
     }
     if (a == 2) {
-        CRat res(n);
-        res = vectors[b] - vectors[k];
+        CRat res = vectors[b] - vectors[k];
         cout << "Answer:" << endl;
         res.print();
         cout << endl;
     }
     if (a == 3) {
         cout << "Answer:" << endl;
-        CRat res(n);
-        res = vectors[b] * vectors[k];
+        CRat res = vectors[b] * vectors[k];
         res.print();
+        cout << endl;
     }
-    
+    }
     return 0;
 }
