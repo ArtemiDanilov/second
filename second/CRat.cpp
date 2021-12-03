@@ -75,17 +75,23 @@
             if(coord[0][i] == 0 || coord[0][i] == coord[1][i] || coord[1][i] == 1){
                 if(coord[0][i] == 0){
                     cout << "0";
+                    if(i != lenght - 1){
                     cout << ",";
+                    }
                     continue;
                 }
                 if(coord[0][i] == coord[1][i]){
                     cout << "1";
+                    if(i != lenght - 1){
                     cout << ",";
+                    }
                     continue;
                 }
                 if (coord[1][i] == 1) {
                     cout << coord[0][i];
+                    if(i != lenght - 1){
                     cout << ",";
+                    }
                     continue;
                 }
             }
